@@ -1,7 +1,6 @@
 - 👋 Hi, I’m @viniciusbregoli
 - 👀 I’m interested in learning all kinds of technology
-- 🌱 I’m currently learning C/C++, C#, Java.
-- 💞️ I’m looking to collaborate on ...
+- 🌱 I’m currently learning C/C++ and Java.
 - 📫 How to reach me: viniciusbregoli@hotmail.com
 
 <!---
