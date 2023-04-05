@@ -1,6 +1,6 @@
 - 👋 Hi, I’m @viniciusbregoli
 - 👀 I’m interested in learning all kinds of technology
-- 🌱 I’m currently learning C/C++ and Java.
+- 🌱 I’m currently working with Vue.js web development 
 - 📫 How to reach me: viniciusbregoli@hotmail.com
 
 <!---
