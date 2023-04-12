@@ -1,5 +1,5 @@
 - 👋 Hi, I’m @viniciusbregoli
-- 👀 I’m interested in learning all kinds of technology
+- 👀 I’m currently studying React.js
 - 🌱 I’m currently working with Vue.js web development 
 - 📫 How to reach me: viniciusbregoli@hotmail.com
 
