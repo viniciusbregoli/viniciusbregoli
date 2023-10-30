@@ -28,9 +28,13 @@
 
 ## Interests
 📚 Deep interest in literature, especially with an emphasis on didactic works.
+
 🤖 Enthusiastic about Artificial Intelligence (AI) and Machine Learning technologies.
+
 🌐 Passionate about web development and crafting user-centric applications.
+
 🧠 Always on the lookout for challenging problems to solve, driving innovation and efficiency.
+
 💡 Continuously learning, exploring, and seeking to contribute to the tech community.
 
 Thank you for visiting my GitHub profile! Feel free to check out my repositories and leave a ⭐ if you find them interesting!
