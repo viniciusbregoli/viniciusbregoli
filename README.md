@@ -22,19 +22,4 @@
 
 ## Education & Courses
 - Pursuing a degree in Computer Engineering from Pontifícia Universidade Católica do Paraná, Curitiba. Expected Graduation: December 2022.
-- Vue.js Essentials (2022) via Udemy: 32-hour comprehensive course focusing on mastering Vue.js and its applications in web development.
-- React - The Complete Guide (2023) via Udemy: A 72-hour intensive course delving deep into the React framework, equipping me with advanced skills for building dynamic web applications.
 - Various international courses and experiences in the USA and Europe.
-
-## Interests
-📚 Deep interest in literature, especially with an emphasis on didactic works.
-
-🤖 Enthusiastic about Artificial Intelligence (AI) and Machine Learning technologies.
-
-🌐 Passionate about web development and crafting user-centric applications.
-
-🧠 Always on the lookout for challenging problems to solve, driving innovation and efficiency.
-
-💡 Continuously learning, exploring, and seeking to contribute to the tech community.
-
-Thank you for visiting my GitHub profile! Feel free to check out my repositories and leave a ⭐ if you find them interesting!
