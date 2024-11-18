@@ -11,7 +11,7 @@
 - **Languages**: English (Fluent), Portuguese (Native), Basic knowledge in German and Spanish.
 - **Programming**: Java, Python, C/C++, JavaScript.
 - **Web Development**: HTML5, CSS3, JavaScript and its frameworks, mainly Vue.js and React.js.
-- **Tools**: Git, GitLab, DBeaver, Discord, MS Teams.
+- **Tools**: Git, GitLab, DBeaver, Discord, MS Teams, Youtrack.
 - **Database Management**: PostgreSQL, MySQL, MongoDB.
 
 ## Professional Experience
@@ -21,5 +21,5 @@
 - **Exati Tech Intern** (2022-2023): Contributed to various tech solution projects and played an active role in their implementation.
 
 ## Education & Courses
-- Pursuing a degree in Computer Engineering from Pontifícia Universidade Católica do Paraná, Curitiba. Expected Graduation: December 2022.
+- Pursuing a degree in Computer Engineering from Pontifícia Universidade Católica do Paraná, Curitiba. Expected Graduation: December 2025.
 - Various international courses and experiences in the USA and Europe.
