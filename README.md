@@ -1,46 +1,24 @@
-# Hi there, I'm Vinícius Bregoli
+# Vinícius Bregoli
 
-## About Me
+Software Developer based in Curitiba, Brazil. Currently working as an ML/AI Developer at Kinebot, focusing on computer vision and LLM applications.
 
-I'm a Computer Engineering student with hands-on experience in programming, workflow optimization, and IT infrastructure. Currently on an exchange program at Technische Hochschule Ingolstadt studying Computer Science and AI.
+## About
 
-- Currently studying at **Technische Hochschule Ingolstadt**
-- Computer Engineering at **Pontifical Catholic University of Paraná**
-- Based in **Ingolstadt, Bavaria - Germany**
-- Passionate about Linux, robotics, and full-stack development
-- Visit my website: [viniciusbregoli.dev](https://www.viniciusbregoli.dev)
-
-## Experience
-
-- **Exati Tecnologias** (2022-2023) - Web development with Vue.js, Java & Node.js
-- **Siemens Energy Brasil** (2021-2022) - IT infrastructure & support
+- B.Eng. in Computer Engineering from PUCPR (2020-2025)
+- Exchange program at Technische Hochschule Ingolstadt - Computer Science and AI (2024-2025)
+- Former robotics team member - competed in RoboCore Experience and IRONCup
 
 ## Tech Stack
 
-```
-Frontend: JavaScript, Vue.js, React.js, HTML, CSS
-Backend: Java, Python, Node.js, PHP
-Database: PostgreSQL, SQL
-Tools: Git, GitLab, Linux
-```
+**Languages:** Python, Rust, JavaScript, C/C++, SQL
 
-## Projects & Research
+**ML/AI:** PyTorch, OpenCV, LLMs, Computer Vision, Human Pose Estimation
 
-- Member of PUCPR Mobile Robotics Team (follow-line, sumo, trekking, and combat robots)
-- Research on digital twins and aerospace applications (partnership with Airbus)
+**Web:** Node.js, Vue.js, HTML, CSS
 
-## Languages
+**Tools:** Git, Linux, Virtualization
 
-- English (Fluent)
-- Portuguese (Fluent)
-- German (Beginner)
-- Spanish (Intermediate)
+## Links
 
-## Let's Connect
-
-- [LinkedIn](https://linkedin.com/in/viniciusbregoli/)
-- Email: vinibregoli@gmail.com
-
----
-
-*I'm always open to interesting projects and collaborations!*
+- [Website](https://viniciusbregoli.dev)
+- [LinkedIn](https://linkedin.com/in/viniciusbregoli)
