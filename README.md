@@ -50,7 +50,7 @@ Outside work I build tools I use every day: native apps for my Mac and iPhone, a
       Type a German word and get a reviewed Anki card: gender and plural checked against Wiktionary, example sentences, audio, level and topic tags.
     </td>
     <td width="50%" valign="top">
-      <img src="https://raw.githubusercontent.com/viniciusbregoli/bregoli-dev/main/app/icon.svg" width="48" height="48" align="left" alt="">
+      <img src="https://raw.githubusercontent.com/viniciusbregoli/bregoli-dev/master/app/icon.svg" width="48" height="48" align="left" alt="">
       <b><a href="https://github.com/viniciusbregoli/bregoli-dev">bregoli-dev</a></b><br>
       <sub>Next.js · React · Tailwind</sub>
       <br clear="left">
