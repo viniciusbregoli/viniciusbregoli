@@ -34,11 +34,11 @@ Outside work I build tools I use every day: native apps for my Mac and iPhone, a
       A local take on Moises for guitar practice: splits a song into six stems, slows it down, loops a passage, detects chords and writes an editable guitar tab.
     </td>
     <td width="50%" valign="top">
-      <img src="https://raw.githubusercontent.com/viniciusbregoli/sound-carvers/main/assets/icon.png" width="48" height="48" align="left" alt="">
-      <b><a href="https://github.com/viniciusbregoli/sound-carvers">sound-carvers</a></b><br>
-      <sub>TypeScript · React · Hono · SQLite</sub>
+      <img src="https://raw.githubusercontent.com/viniciusbregoli/aether/main/assets/icon.png" width="48" height="48" align="left" alt="">
+      <b><a href="https://github.com/viniciusbregoli/aether">aether</a></b><br>
+      <sub>Swift · AppKit · macOS</sub>
       <br clear="left">
-      My band's shared notebook: a kanban of songs by readiness, setlists with retune warnings, a stage mode for a page-turner pedal, and live sync between everyone's devices.
+      A tiling window manager for macOS with AeroSpace's model and Hyprland's look: dwindle tiling, animated windows and workspaces, and a glowing border on the focused window, all with SIP left on.
     </td>
   </tr>
   <tr>
@@ -59,8 +59,9 @@ Outside work I build tools I use every day: native apps for my Mac and iPhone, a
   </tr>
 </table>
 
-### University and earlier projects
+### Other projects
 
+- [sound-carvers](https://github.com/viniciusbregoli/sound-carvers): my band's shared notebook: a kanban of songs by readiness, setlists with retune warnings, a stage mode for a page-turner pedal, and live sync between everyone's devices.
 - [TCC](https://github.com/viniciusbregoli/TCC) and [Sim2Log-core](https://github.com/viniciusbregoli/Sim2Log-core): my undergraduate thesis, a generator that builds discrete-event simulation models from event logs with process mining, validated on surgical center scheduling data.
 - [computer-vision-project](https://github.com/viniciusbregoli/computer-vision-project): real-time image processing and computer vision demos.
 - [sound-sense](https://github.com/viniciusbregoli/sound-sense): an IoT system that helps deaf users notice sound-emitting devices ([ESP32 firmware](https://github.com/viniciusbregoli/soundsense-esp32)).
