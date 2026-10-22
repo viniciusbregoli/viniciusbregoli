@@ -27,14 +27,14 @@ Outside work I build tools I use every day: native apps for my Mac and iPhone, a
   </tr>
   <tr>
     <td width="50%" valign="top">
-      <img src="https://raw.githubusercontent.com/viniciusbregoli/urdr/main/assets/icon.svg" width="48" height="48" align="left" alt="">
+      <img src="https://raw.githubusercontent.com/viniciusbregoli/urdr/main/assets/icon.png" width="48" height="48" align="left" alt="">
       <b><a href="https://github.com/viniciusbregoli/urdr">urdr</a></b><br>
       <sub>Swift · Rust · Python</sub>
       <br clear="left">
       A local take on Moises for guitar practice: splits a song into six stems, slows it down, loops a passage, detects chords and writes an editable guitar tab.
     </td>
     <td width="50%" valign="top">
-      <img src="https://raw.githubusercontent.com/viniciusbregoli/sound-carvers/main/assets/icon.svg" width="48" height="48" align="left" alt="">
+      <img src="https://raw.githubusercontent.com/viniciusbregoli/sound-carvers/main/assets/icon.png" width="48" height="48" align="left" alt="">
       <b><a href="https://github.com/viniciusbregoli/sound-carvers">sound-carvers</a></b><br>
       <sub>TypeScript · React · Hono · SQLite</sub>
       <br clear="left">
@@ -43,7 +43,7 @@ Outside work I build tools I use every day: native apps for my Mac and iPhone, a
   </tr>
   <tr>
     <td width="50%" valign="top">
-      <img src="https://raw.githubusercontent.com/viniciusbregoli/anki-card-generator/main/assets/icon.svg" width="48" height="48" align="left" alt="">
+      <img src="https://raw.githubusercontent.com/viniciusbregoli/anki-card-generator/main/assets/icon.png" width="48" height="48" align="left" alt="">
       <b><a href="https://github.com/viniciusbregoli/anki-card-generator">anki-card-generator</a></b><br>
       <sub>Python · FastAPI · React</sub>
       <br clear="left">
