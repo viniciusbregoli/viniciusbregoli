@@ -29,6 +29,11 @@ WIDTH = 60  # characters in every info line, so the dot leaders line up
 FONT_SIZE = 16
 LINE_HEIGHT = 20
 CHAR_WIDTH = 9.65  # Consolas-ish advance at 16px; only used to size the canvas
+# The portrait uses a smaller font so it gets about three times as many characters
+# as the info panel would allow; at 16px the face is too few cells to read.
+ART_FONT_SIZE = 10
+ART_LINE_HEIGHT = 12
+ART_CHAR_WIDTH = CHAR_WIDTH * ART_FONT_SIZE / FONT_SIZE
 PAD = 20
 GAP = 40
 
@@ -253,13 +258,16 @@ def build_lines(s: dict) -> list[list[Span]]:
 
 
 def svg(theme: dict, ascii_art: list[str], lines: list[list[Span]]) -> str:
-    rows = max(len(ascii_art), len(lines))
-    art_cols = max(len(l) for l in ascii_art)
-    info_x = PAD + art_cols * CHAR_WIDTH + GAP
+    art_cols = max(len(row) for row in ascii_art)
+    art_height = len(ascii_art) * ART_LINE_HEIGHT
+    info_height = len(lines) * LINE_HEIGHT
+    content = max(art_height, info_height)
+    info_x = PAD + art_cols * ART_CHAR_WIDTH + GAP
     width = round(info_x + WIDTH * CHAR_WIDTH + PAD)
-    height = PAD * 2 + rows * LINE_HEIGHT
-    art_top = PAD + LINE_HEIGHT + (rows - len(ascii_art)) * LINE_HEIGHT // 2
-    info_top = PAD + LINE_HEIGHT + (rows - len(lines)) * LINE_HEIGHT // 2
+    height = PAD * 2 + content
+    # y is a text baseline, so start each block one line below its top edge.
+    art_top = PAD + (content - art_height) // 2 + ART_LINE_HEIGHT
+    info_top = PAD + (content - info_height) // 2 + LINE_HEIGHT
 
     out = [
         (
@@ -275,10 +283,10 @@ def svg(theme: dict, ascii_art: list[str], lines: list[list[Span]]) -> str:
         "text,tspan{white-space:pre}",
         "</style>",
         f'<rect width="{width}" height="{height}" rx="15" fill="{theme["bg"]}" stroke="{theme["border"]}"/>',
-        f'<text x="{PAD}" y="{art_top}" class="text">',
+        f'<text x="{PAD}" y="{art_top}" class="text" font-size="{ART_FONT_SIZE}px">',
     ]
     for i, row in enumerate(ascii_art):
-        out.append(f'<tspan x="{PAD}" y="{art_top + i * LINE_HEIGHT}">{escape(row)}</tspan>')
+        out.append(f'<tspan x="{PAD}" y="{art_top + i * ART_LINE_HEIGHT}">{escape(row)}</tspan>')
     out.append("</text>")
     out.append(f'<text x="{info_x:.0f}" y="{info_top}">')
     for i, spans in enumerate(lines):
@@ -302,9 +310,9 @@ def main() -> None:
         s["commits"], s["contributed"] = contributions(gh, s["created_at"])
         s["loc"] = lines_of_code(gh, s["own_repos"])
 
-    art = (HERE / "ascii.txt").read_text().strip("\n").splitlines()
     lines = build_lines(s)
     for name, theme in THEMES.items():
+        art = (HERE / f"ascii_{name}.txt").read_text().strip("\n").splitlines()
         (HERE / f"{name}_mode.svg").write_text(svg(theme, art, lines))
     summary = {k: v for k, v in s.items() if k not in ("own_repos", "created_at")}
     print(json.dumps(summary, default=str))
