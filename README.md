@@ -1,4 +1,8 @@
-# Vinícius Bregoli
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="card/dark_mode.svg">
+  <source media="(prefers-color-scheme: light)" srcset="card/light_mode.svg">
+  <img alt="Vinícius Bregoli: neofetch-style card with an ASCII portrait, about info and GitHub stats" src="card/dark_mode.svg">
+</picture>
 
 AI engineer and team lead at [Kinebot](https://kinebot.com.br) in Curitiba, Brazil. I lead a small AI team building agentic AI systems, Python APIs and services on AWS, and computer vision pipelines for human pose estimation.
 
