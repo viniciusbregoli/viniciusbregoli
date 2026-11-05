@@ -23,17 +23,25 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: astral-sh/setup-uv@v6
-      - name: Build card
+      - name: Build and commit the card
         env:
           # CARD_TOKEN is an optional personal token: with it, commits to private
           # repos count too. Without it, the card shows public activity only.
           GITHUB_TOKEN: ${{ secrets.CARD_TOKEN || github.token }}
-        run: uv run card/build.py
-      - name: Commit if changed
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add card/
-          git diff --cached --quiet && exit 0
-          git commit -m "chore: refresh profile card stats"
-          git push
+          # If main moved while the card was building, rebuild on the new main
+          # instead of rebasing: the SVGs are rewritten in full, so a rebase would
+          # conflict or keep a card built from old inputs.
+          for attempt in 1 2 3; do
+            uv run card/build.py
+            git add card/
+            git diff --cached --quiet && exit 0
+            git commit -m "chore: refresh profile card stats"
+            git push && exit 0
+            git fetch origin main
+            git reset --hard origin/main
+          done
+          echo "main kept moving; giving up after 3 attempts" >&2
+          exit 1
