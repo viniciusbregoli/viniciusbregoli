@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1142" height="520" viewBox="0 0 1142 520" font-family="ConsolasFallback,Consolas,Menlo,'DejaVu Sans Mono',monospace" font-size="16px">
+<style>
+.text{fill:#24292f} .key{fill:#953800} .value{fill:#0a3069} .dots{fill:#8c959f} .add{fill:#1a7f37} .del{fill:#cf222e}
+text,tspan{white-space:pre}
+</style>
+<rect width="1142" height="520" rx="15" fill="#f6f8fa" stroke="#d0d7de"/>
+<text x="20" y="40" class="text">
+<tspan x="20" y="40">                        '`.`</tspan>
+<tspan x="20" y="60">                  `    '  ! ``!</tspan>
+<tspan x="20" y="80">          `.. ':          .;.,|</tspan>
+<tspan x="20" y="100">              !'`   ` 1  ,   `</tspan>
+<tspan x="20" y="120">      !'  ;.    l': ,|:|.::'</tspan>
+<tspan x="20" y="140">   .  ,` i!    x( .'!i..'l'!</tspan>
+<tspan x="20" y="160">   ,, . `,,|,(b8mZl  l;'.lI ! '; .`</tspan>
+<tspan x="20" y="180">,` `:. iitnr/L@kvpmYO`i: `;ll,, I,    !</tspan>
+<tspan x="20" y="200">''` '` IrZp/qba@*bhB@bmJnvif;lIO0xf `</tspan>
+<tspan x="20" y="220">Ili, :'`ddo*OZk&amp;BB&amp;#WB@@@#dhUoo@8Bl      .</tspan>
+<tspan x="20" y="240">!i..  `'tQYQMomOwd*&amp;@@@@B%&amp;&amp;k8@@@| !'   .,</tspan>
+<tspan x="20" y="260">:!;,!:   ;YZ%B%8oB@@@@@@%%%&amp;8ha@n.!:;:'</tspan>
+<tspan x="20" y="280">.'::`:.   Y@@%8*o%@@@@@@@@@%&amp;dq@Jz.</tspan>
+<tspan x="20" y="300">'';! .::! U@M%%%@&amp;#&amp;@@@@@@@%&amp;*M%O!i!'</tspan>
+<tspan x="20" y="320">!, ,! .  . f0qka&amp;&amp;M*&amp;@@@@@BBBaJ!.i` '.</tspan>
+<tspan x="20" y="340">``        . (Oo#B@@@&amp;8%@@%&amp;hu:`!i`;i'..</tspan>
+<tspan x="20" y="360">      .  . ' z88@@@@@@@&amp;hO/, il,'|!`,`</tspan>
+<tspan x="20" y="380">'':  `. ,`..  q*o8MkOLLz|;,:Il,`':,i:`</tspan>
+<tspan x="20" y="400">.' ';`'.,:..'        'jl!;:I!,:Ij!l;`..</tspan>
+<tspan x="20" y="420">`'.,i,'`..'.` ``   i||!;:i|:.;!i!I!``. .</tspan>
+<tspan x="20" y="440">.',,:,:,!!::,,,:,!Il;;i!||` '.!II;.,`</tspan>
+<tspan x="20" y="460">!,,:'`';,;:',` ,l!::;ilIl .`,,l: `:;''... .`.</tspan>
+<tspan x="20" y="480">,,:!!'`:`'`` ,Il',!illl; . ``i, ;::,,,''`  `..   .</tspan>
+<tspan x="20" y="500">.  `l'`.,'`` ,(':;;!!!.  `..(1`,;,,,:::''`..```</tspan>
+</text>
+<text x="542" y="40">
+<tspan x="542" y="40" class="text">vinicius@bregoli </tspan><tspan class="text">───────────────────────────────────────────</tspan>
+<tspan x="542" y="60" class="dots">. </tspan><tspan class="key">OS</tspan><tspan class="text">:</tspan><tspan class="dots"> ................................... </tspan><tspan class="value">macOS, iOS, Debian</tspan>
+<tspan x="542" y="80" class="dots">. </tspan><tspan class="key">Uptime</tspan><tspan class="text">:</tspan><tspan class="dots"> ........................ </tspan><tspan class="value">6 years, 2 months, 0 days</tspan>
+<tspan x="542" y="100" class="dots">. </tspan><tspan class="key">Host</tspan><tspan class="text">:</tspan><tspan class="dots"> ............................................ </tspan><tspan class="value">Kinebot</tspan>
+<tspan x="542" y="120" class="dots">. </tspan><tspan class="key">Kernel</tspan><tspan class="text">:</tspan><tspan class="dots"> ........................ </tspan><tspan class="value">AI Engineer and Team Lead</tspan>
+<tspan x="542" y="140" class="dots">. </tspan><tspan class="key">Shell</tspan><tspan class="text">:</tspan><tspan class="dots"> .............................................. </tspan><tspan class="value">fish</tspan>
+<tspan x="542" y="160" class="dots">. </tspan><tspan class="key">Location</tspan><tspan class="text">:</tspan><tspan class="dots"> ............................... </tspan><tspan class="value">Curitiba, Brazil</tspan>
+<tspan x="542" y="180" class="dots">. </tspan>
+<tspan x="542" y="200" class="dots">. </tspan><tspan class="key">Languages.Programming</tspan><tspan class="text">:</tspan><tspan class="dots"> ... </tspan><tspan class="value">Python, TypeScript, Swift, Rust</tspan>
+<tspan x="542" y="220" class="dots">. </tspan><tspan class="key">Languages.Computer</tspan><tspan class="text">:</tspan><tspan class="dots"> .......... </tspan><tspan class="value">SQL, HTML, CSS, LaTeX, YAML</tspan>
+<tspan x="542" y="240" class="dots">. </tspan><tspan class="key">Languages.Real</tspan><tspan class="text">:</tspan><tspan class="dots"> .............. </tspan><tspan class="value">Portuguese, English, German</tspan>
+<tspan x="542" y="260" class="dots">. </tspan>
+<tspan x="542" y="280" class="dots">. </tspan><tspan class="key">Hobbies.Software</tspan><tspan class="text">:</tspan><tspan class="dots"> ......... </tspan><tspan class="value">macOS and iOS apps, tiling WMs</tspan>
+<tspan x="542" y="300" class="dots">. </tspan><tspan class="key">Hobbies.Real</tspan><tspan class="text">:</tspan><tspan class="dots"> ........... </tspan><tspan class="value">Guitar, my band, learning German</tspan>
+<tspan x="542" y="340" class="text">- Contact </tspan><tspan class="text">──────────────────────────────────────────────────</tspan>
+<tspan x="542" y="360" class="dots">. </tspan><tspan class="key">Website</tspan><tspan class="text">:</tspan><tspan class="dots"> ............................. </tspan><tspan class="value">viniciusbregoli.dev</tspan>
+<tspan x="542" y="380" class="dots">. </tspan><tspan class="key">LinkedIn</tspan><tspan class="text">:</tspan><tspan class="dots"> ................................ </tspan><tspan class="value">viniciusbregoli</tspan>
+<tspan x="542" y="400" class="dots">. </tspan><tspan class="key">GitHub</tspan><tspan class="text">:</tspan><tspan class="dots"> .................................. </tspan><tspan class="value">viniciusbregoli</tspan>
+<tspan x="542" y="440" class="text">- GitHub Stats </tspan><tspan class="text">─────────────────────────────────────────────</tspan>
+<tspan x="542" y="460" class="dots">. </tspan><tspan class="key">Repos</tspan><tspan class="text">:</tspan><tspan class="dots"> ..... </tspan><tspan class="value">27 {Contributed: 18}</tspan><tspan class="text"> | </tspan><tspan class="key">Stars</tspan><tspan class="text">:</tspan><tspan class="dots"> ............. </tspan><tspan class="value">0</tspan>
+<tspan x="542" y="480" class="dots">. </tspan><tspan class="key">Commits</tspan><tspan class="text">:</tspan><tspan class="dots"> ................. </tspan><tspan class="value">12,700</tspan><tspan class="text"> | </tspan><tspan class="key">Followers</tspan><tspan class="text">:</tspan><tspan class="dots"> ......... </tspan><tspan class="value">5</tspan>
+<tspan x="542" y="500" class="dots">. </tspan><tspan class="key">Lines of Code on GitHub</tspan><tspan class="text">:</tspan><tspan class="dots"> . </tspan><tspan class="value">133,395</tspan><tspan class="text"> ( </tspan><tspan class="add">163,849++</tspan><tspan class="text">, </tspan><tspan class="del">30,454--</tspan><tspan class="text"> )</tspan>
+</text>
+</svg>
