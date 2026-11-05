@@ -1,0 +1,106 @@
+{
+  "Sim2Log-core": [
+    10442,
+    2868
+  ],
+  "TCC": [
+    11684,
+    7684
+  ],
+  "aether": [
+    4820,
+    507
+  ],
+  "anki-card-generator": [
+    5130,
+    39
+  ],
+  "anki-flashcard-maker": [
+    6489,
+    1181
+  ],
+  "anki-highlighting-addon": [
+    0,
+    0
+  ],
+  "blog": [
+    912,
+    124
+  ],
+  "bot-equipe-brigadeiro": [
+    1437,
+    9
+  ],
+  "bregoli-dev": [
+    27034,
+    10631
+  ],
+  "compiler": [
+    855,
+    419
+  ],
+  "computer-vision-project": [
+    0,
+    0
+  ],
+  "contribution-art": [
+    0,
+    0
+  ],
+  "curriculum-vitae": [
+    414,
+    42
+  ],
+  "discord-bot": [
+    3050,
+    0
+  ],
+  "git-gut-geo": [
+    3245,
+    24
+  ],
+  "hermes-ios": [
+    24184,
+    3674
+  ],
+  "jarvis": [
+    7184,
+    541
+  ],
+  "screamr": [
+    6768,
+    674
+  ],
+  "sound-carvers": [
+    23882,
+    473
+  ],
+  "sound-sense": [
+    5808,
+    282
+  ],
+  "soundsense-esp32": [
+    1128,
+    308
+  ],
+  "sudoku-heuristica": [
+    705,
+    134
+  ],
+  "urdr": [
+    12983,
+    547
+  ],
+  "viniciusbregoli": [
+    204,
+    115
+  ],
+  "wacli-mcp": [
+    5376,
+    175
+  ],
+  "youtube-speed-controller-extension": [
+    115,
+    3
+  ]
+}

@@ -1,0 +1,48 @@
+name: Refresh profile card
+
+on:
+  schedule:
+    - cron: "0 6 * * *"
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - card/build.py
+      - card/ascii_*.txt
+
+permissions:
+  contents: write
+
+concurrency:
+  group: profile-card
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+      - name: Build and commit the card
+        env:
+          # CARD_TOKEN is an optional personal token: with it, commits to private
+          # repos count too. Without it, the card shows public activity only.
+          GITHUB_TOKEN: ${{ secrets.CARD_TOKEN || github.token }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          # If the branch moved while the card was building, rebuild on its new tip
+          # instead of rebasing: the SVGs are rewritten in full, so a rebase would
+          # conflict or keep a card built from old inputs. GITHUB_REF_NAME is the
+          # branch this run checked out (main, or the one picked on a manual run).
+          for attempt in 1 2 3; do
+            uv run card/build.py
+            git add card/
+            git diff --cached --quiet && exit 0
+            git commit -m "chore: refresh profile card stats"
+            git push && exit 0
+            git fetch origin "refs/heads/$GITHUB_REF_NAME"
+            git reset --hard FETCH_HEAD
+          done
+          echo "$GITHUB_REF_NAME kept moving; giving up after 3 attempts" >&2
+          exit 1
