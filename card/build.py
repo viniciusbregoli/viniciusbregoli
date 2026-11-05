@@ -102,53 +102,67 @@ def graphql(gh: httpx.Client, query: str, **variables) -> dict:
 
 
 def profile_stats(gh: httpx.Client) -> dict:
-    data = graphql(
-        gh,
-        """
-        query($login: String!) {
-          user(login: $login) {
-            createdAt
-            followers { totalCount }
-            repositoriesContributedTo(
-              contributionTypes: [COMMIT, PULL_REQUEST, PULL_REQUEST_REVIEW, REPOSITORY]
-            ) { totalCount }
-            repositories(first: 100, ownerAffiliations: OWNER, privacy: PUBLIC) {
-              totalCount
-              nodes { name isFork stargazerCount }
-            }
-          }
+    query = """
+    query($login: String!, $after: String) {
+      user(login: $login) {
+        createdAt
+        followers { totalCount }
+        repositories(first: 100, after: $after, ownerAffiliations: OWNER, privacy: PUBLIC) {
+          totalCount
+          pageInfo { hasNextPage endCursor }
+          nodes { name isFork stargazerCount }
         }
-        """,
-        login=LOGIN,
-    )["user"]
-    repos = data["repositories"]["nodes"]
+      }
+    }
+    """
+    repos, after = [], None
+    while True:
+        user = graphql(gh, query, login=LOGIN, after=after)["user"]
+        page = user["repositories"]
+        repos += page["nodes"]
+        if not page["pageInfo"]["hasNextPage"]:
+            break
+        after = page["pageInfo"]["endCursor"]
     return {
-        "created_at": datetime.fromisoformat(data["createdAt"]),
-        "followers": data["followers"]["totalCount"],
-        "contributed": data["repositoriesContributedTo"]["totalCount"],
-        "repos": data["repositories"]["totalCount"],
+        "created_at": datetime.fromisoformat(user["createdAt"]),
+        "followers": user["followers"]["totalCount"],
+        "repos": page["totalCount"],
         "stars": sum(r["stargazerCount"] for r in repos),
         "own_repos": [r["name"] for r in repos if not r["isFork"]],
     }
 
 
-def total_commits(gh: httpx.Client, since: datetime) -> int:
-    # contributionsCollection only spans one year per call, so walk year by year.
+def contributions(gh: httpx.Client, since: datetime) -> tuple[int, int]:
+    """Count lifetime commits and the repos I contributed to.
+
+    contributionsCollection only spans one year per call, so walk year by year.
+    repositoriesContributedTo would be one call, but it only covers recent activity.
+    """
     query = """
     query($login: String!, $from: DateTime!, $to: DateTime!) {
       user(login: $login) {
-        contributionsCollection(from: $from, to: $to) { totalCommitContributions }
+        contributionsCollection(from: $from, to: $to) {
+          totalCommitContributions
+          commitContributionsByRepository(maxRepositories: 100) { repository { nameWithOwner } }
+          pullRequestContributionsByRepository(maxRepositories: 100) { repository { nameWithOwner } }
+          pullRequestReviewContributionsByRepository(maxRepositories: 100) { repository { nameWithOwner } }
+          issueContributionsByRepository(maxRepositories: 100) { repository { nameWithOwner } }
+        }
       }
     }
     """
     now = datetime.now(UTC)
-    total, start = 0, since
+    commits, repos, start = 0, set(), since
     while start < now:
         end = min(start + relativedelta(years=1), now)
         data = graphql(gh, query, login=LOGIN, **{"from": start.isoformat(), "to": end.isoformat()})
-        total += data["user"]["contributionsCollection"]["totalCommitContributions"]
+        c = data["user"]["contributionsCollection"]
+        commits += c["totalCommitContributions"]
+        for key, groups in c.items():
+            if key.endswith("ByRepository"):
+                repos.update(g["repository"]["nameWithOwner"] for g in groups)
         start = end
-    return total
+    return commits, len(repos)
 
 
 def lines_of_code(gh: httpx.Client, repos: list[str]) -> tuple[int, int]:
@@ -285,7 +299,7 @@ def svg(theme: dict, ascii_art: list[str], lines: list[list[Span]]) -> str:
 def main() -> None:
     with client() as gh:
         s = profile_stats(gh)
-        s["commits"] = total_commits(gh, s["created_at"])
+        s["commits"], s["contributed"] = contributions(gh, s["created_at"])
         s["loc"] = lines_of_code(gh, s["own_repos"])
 
     art = (HERE / "ascii.txt").read_text().strip("\n").splitlines()
