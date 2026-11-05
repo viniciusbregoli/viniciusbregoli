@@ -8,7 +8,7 @@ on:
     branches: [main]
     paths:
       - card/build.py
-      - card/ascii.txt
+      - card/ascii_*.txt
 
 permissions:
   contents: write
