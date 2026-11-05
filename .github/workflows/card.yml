@@ -31,17 +31,18 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          # If main moved while the card was building, rebuild on the new main
+          # If the branch moved while the card was building, rebuild on its new tip
           # instead of rebasing: the SVGs are rewritten in full, so a rebase would
-          # conflict or keep a card built from old inputs.
+          # conflict or keep a card built from old inputs. GITHUB_REF_NAME is the
+          # branch this run checked out (main, or the one picked on a manual run).
           for attempt in 1 2 3; do
             uv run card/build.py
             git add card/
             git diff --cached --quiet && exit 0
             git commit -m "chore: refresh profile card stats"
             git push && exit 0
-            git fetch origin main
-            git reset --hard origin/main
+            git fetch origin "$GITHUB_REF_NAME"
+            git reset --hard FETCH_HEAD
           done
-          echo "main kept moving; giving up after 3 attempts" >&2
+          echo "$GITHUB_REF_NAME kept moving; giving up after 3 attempts" >&2
           exit 1
