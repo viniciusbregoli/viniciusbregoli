@@ -33,6 +33,11 @@ CLAHE_CLIP = 4.0
 # Per theme: on the dark card the curls are the dim part, so lift them with a lower gamma.
 GAMMA = {"dark": 0.8, "light": 1.2}
 RAMP = " .:-=+*#%@"
+# At character size the curls average out to an even gray. Inside the hair, stretch
+# the contrast so curl highlights hit the dense end of the ramp and the dark gaps
+# between curls drop to blanks, which also gives the hair a ragged edge.
+HAIR_SKIN_LEVEL = 0.45  # cells brighter than this in the plain photo are skin, not hair
+HAIR_STRETCH = (25, 97)  # percentiles of the hair cells mapped to 0 and 1
 
 
 def cutout(img: np.ndarray) -> np.ndarray:
@@ -45,34 +50,50 @@ def cutout(img: np.ndarray) -> np.ndarray:
     n, labels, stats, _ = cv2.connectedComponentsWithStats(fg)
     if n > 1:  # keep only the biggest blob, which is the person
         fg = (labels == 1 + np.argmax(stats[1:, cv2.CC_STAT_AREA])).astype(np.uint8)
-    hair = np.zeros_like(fg)
-    cv2.ellipse(hair, HAIR["center"], HAIR["axes"], HAIR["angle"], 0, 360, 1, -1)
-    fg = np.maximum(fg, hair)
+    fg = np.maximum(fg, hair_oval(fg.shape))
     return cv2.GaussianBlur(fg.astype(np.float32), (7, 7), 0)
+
+
+def hair_oval(shape: tuple[int, ...]) -> np.ndarray:
+    oval = np.zeros(shape[:2], np.uint8)
+    cv2.ellipse(oval, HAIR["center"], HAIR["axes"], HAIR["angle"], 0, 360, 1, -1)
+    return oval
 
 
 def main() -> None:
     img = cv2.imread(str(HERE / "avatar.jpg"))
     gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+    plain = gray.copy()
     gray = cv2.createCLAHE(clipLimit=CLAHE_CLIP, tileGridSize=(6, 6)).apply(gray)
     mask = cutout(img)
     person = (gray.astype(np.float32) * mask).clip(0, 255).astype(np.uint8)
 
     x0, y0, x1, y1 = CROP
     person, mask = person[y0:y1, x0:x1], mask[y0:y1, x0:x1]
+    plain, oval = plain[y0:y1, x0:x1], hair_oval(img.shape)[y0:y1, x0:x1].astype(np.float32)
     blur = cv2.GaussianBlur(person, (0, 0), 1)
     person = cv2.addWeighted(person, 2.2, blur, -1.2, 0)  # unsharp mask
     cols = round(ROWS * (x1 - x0) / (y1 - y0) / CELL_RATIO)
     small = cv2.resize(person, (cols, ROWS), interpolation=cv2.INTER_AREA) / 255
     inside = cv2.resize(mask, (cols, ROWS), interpolation=cv2.INTER_AREA) > 0.6
 
+    def shrink(a: np.ndarray) -> np.ndarray:
+        return cv2.resize(a, (cols, ROWS), interpolation=cv2.INTER_AREA)
+
+    hair = (shrink(oval) > 0.5) & (shrink(plain) / 255 < HAIR_SKIN_LEVEL)
+    lo, hi = np.percentile(small[hair], HAIR_STRETCH)
+    small[hair] = ((small[hair] - lo) / (hi - lo)).clip(0, 1)
+
     for theme in ("dark", "light"):
         lines = []
-        for row, row_inside in zip(small, inside, strict=True):
+        for row, row_inside, row_hair in zip(small, inside, hair, strict=True):
             line = ""
-            for v, keep in zip(row, row_inside, strict=True):
+            for v, keep, is_hair in zip(row, row_inside, row_hair, strict=True):
                 v = v ** GAMMA[theme]
-                if theme == "light":
+                # Light card: invert the face so skin stays light, but draw the hair
+                # from its highlights like pen strokes. Inverted, the gaps between
+                # curls and the wall at the oval's edge would fill in solid.
+                if theme == "light" and not is_hair:
                     v = 1 - v if keep else 0.0
                 line += " " if v <= 0.04 else RAMP[min(len(RAMP) - 1, int(v * len(RAMP)))]
             lines.append(line.rstrip())
