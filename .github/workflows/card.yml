@@ -41,7 +41,7 @@ jobs:
             git diff --cached --quiet && exit 0
             git commit -m "chore: refresh profile card stats"
             git push && exit 0
-            git fetch origin "$GITHUB_REF_NAME"
+            git fetch origin "refs/heads/$GITHUB_REF_NAME"
             git reset --hard FETCH_HEAD
           done
           echo "$GITHUB_REF_NAME kept moving; giving up after 3 attempts" >&2
