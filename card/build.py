@@ -22,6 +22,7 @@ import httpx
 from dateutil.relativedelta import relativedelta
 
 LOGIN = "viniciusbregoli"
+BIRTHDAY = datetime(2002, 6, 12, tzinfo=UTC)  # "Uptime" on the card is my age
 HERE = Path(__file__).parent
 LOC_CACHE = HERE / "loc_cache.json"
 
@@ -63,7 +64,7 @@ THEMES = {
 # Static lines of the card. Each entry is (key, value); None is a blank spacer line.
 ABOUT = [
     ("OS", "macOS, iOS, Debian"),
-    ("Uptime", None),  # filled in from the account age
+    ("Uptime", None),  # filled in from BIRTHDAY
     ("Host", "Kinebot"),
     ("Kernel", "AI Engineer and Team Lead"),
     ("Shell", "fish"),
@@ -240,7 +241,7 @@ def build_lines(s: dict) -> list[list[Span]]:
             lines.append([("dots", ". ")])
             continue
         key, value = item
-        lines.append(kv(key, uptime(s["created_at"]) if key == "Uptime" else value))
+        lines.append(kv(key, uptime(BIRTHDAY) if key == "Uptime" else value))
     lines.append([])
     lines.append(header("Contact", lead="- "))
     lines += [kv(k, v) for k, v in CONTACT]
