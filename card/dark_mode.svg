@@ -52,7 +52,7 @@ text,tspan{white-space:pre}
 <text x="470" y="58">
 <tspan x="470" y="58" class="text">vinicius@bregoli </tspan><tspan class="text">───────────────────────────────────────────</tspan>
 <tspan x="470" y="78" class="dots">. </tspan><tspan class="key">OS</tspan><tspan class="text">:</tspan><tspan class="dots"> ................................... </tspan><tspan class="value">macOS, iOS, Debian</tspan>
-<tspan x="470" y="98" class="dots">. </tspan><tspan class="key">Uptime</tspan><tspan class="text">:</tspan><tspan class="dots"> ....................... </tspan><tspan class="value">24 years, 5 months, 0 days</tspan>
+<tspan x="470" y="98" class="dots">. </tspan><tspan class="key">Uptime</tspan><tspan class="text">:</tspan><tspan class="dots"> ........................ </tspan><tspan class="value">24 years, 5 months, 1 day</tspan>
 <tspan x="470" y="118" class="dots">. </tspan><tspan class="key">Host</tspan><tspan class="text">:</tspan><tspan class="dots"> ............................................ </tspan><tspan class="value">Kinebot</tspan>
 <tspan x="470" y="138" class="dots">. </tspan><tspan class="key">Kernel</tspan><tspan class="text">:</tspan><tspan class="dots"> ........................ </tspan><tspan class="value">AI Engineer and Team Lead</tspan>
 <tspan x="470" y="158" class="dots">. </tspan><tspan class="key">Shell</tspan><tspan class="text">:</tspan><tspan class="dots"> .............................................. </tspan><tspan class="value">fish</tspan>
@@ -70,7 +70,7 @@ text,tspan{white-space:pre}
 <tspan x="470" y="418" class="dots">. </tspan><tspan class="key">GitHub</tspan><tspan class="text">:</tspan><tspan class="dots"> .................................. </tspan><tspan class="value">viniciusbregoli</tspan>
 <tspan x="470" y="458" class="text">- GitHub Stats </tspan><tspan class="text">─────────────────────────────────────────────</tspan>
 <tspan x="470" y="478" class="dots">. </tspan><tspan class="key">Repos</tspan><tspan class="text">:</tspan><tspan class="dots"> ..... </tspan><tspan class="value">27 {Contributed: 28}</tspan><tspan class="text"> | </tspan><tspan class="key">Stars</tspan><tspan class="text">:</tspan><tspan class="dots"> ............. </tspan><tspan class="value">0</tspan>
-<tspan x="470" y="498" class="dots">. </tspan><tspan class="key">Commits</tspan><tspan class="text">:</tspan><tspan class="dots"> ................. </tspan><tspan class="value">12,715</tspan><tspan class="text"> | </tspan><tspan class="key">Followers</tspan><tspan class="text">:</tspan><tspan class="dots"> ......... </tspan><tspan class="value">5</tspan>
-<tspan x="470" y="518" class="dots">. </tspan><tspan class="key">Lines of Code on GitHub</tspan><tspan class="text">:</tspan><tspan class="dots"> . </tspan><tspan class="value">134,219</tspan><tspan class="text"> ( </tspan><tspan class="add">164,957++</tspan><tspan class="text">, </tspan><tspan class="del">30,738--</tspan><tspan class="text"> )</tspan>
+<tspan x="470" y="498" class="dots">. </tspan><tspan class="key">Commits</tspan><tspan class="text">:</tspan><tspan class="dots"> ................. </tspan><tspan class="value">12,716</tspan><tspan class="text"> | </tspan><tspan class="key">Followers</tspan><tspan class="text">:</tspan><tspan class="dots"> ......... </tspan><tspan class="value">5</tspan>
+<tspan x="470" y="518" class="dots">. </tspan><tspan class="key">Lines of Code on GitHub</tspan><tspan class="text">:</tspan><tspan class="dots"> . </tspan><tspan class="value">134,353</tspan><tspan class="text"> ( </tspan><tspan class="add">165,093++</tspan><tspan class="text">, </tspan><tspan class="del">30,740--</tspan><tspan class="text"> )</tspan>
 </text>
 </svg>
